@@ -1,0 +1,31 @@
+.inputForm {
+  margin: 120px 0 40px 0;
+  width: 70%;
+  height: max-content;
+  padding: 20px 10px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.inputForm > input,
+.inputForm > select {
+  font-size: 16px;
+  padding: 4px 8px;
+  border: none;
+  background-color: #eee;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  width: 280px;
+}
+.inputForm > label {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: large;
+  width: 280px;
+}
