@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal({ values }) {
+export default function BasicModal({ values, theme, lang }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -37,10 +37,15 @@ export default function BasicModal({ values }) {
   return (
     <div>
       {haveAllValues() ? (
-        <Button onClick={handleOpen}>Show Table</Button>
+        <Button
+          onClick={handleOpen}
+          sx={{ border: 1, bgcolor: "grey.500", color: "grey.50" }}
+        >
+          {lang.formShowBtn}{" "}
+        </Button>
       ) : (
         <Button onClick={handleOpen} disabled>
-          Show Table
+          {lang.formShowBtn}
         </Button>
       )}
       <Modal

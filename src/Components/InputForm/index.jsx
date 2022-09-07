@@ -12,7 +12,7 @@ const FormValidationSchema = Yup.object().shape({
   tax_rate: Yup.string().required("Required"),
 });
 
-const InputForm = ({ theme }) => {
+const InputForm = ({ theme, lang }) => {
   const { handleSubmit, handleChange, values } = useFormik({
     initialValues: {
       loan: 100000,
@@ -28,9 +28,9 @@ const InputForm = ({ theme }) => {
     },
   });
   return (
-    <>
+    <div className="form-wrapper">
       <form onSubmit={handleSubmit} className={`inputForm ${theme}`}>
-        <label htmlFor="loan">Loan amount:</label>
+        <label htmlFor="loan">{lang.formLoan}</label>
         <input
           id="loan"
           name="loan"
@@ -39,7 +39,7 @@ const InputForm = ({ theme }) => {
           value={values.loan}
         />
 
-        <label htmlFor="installment">Number of installments:</label>
+        <label htmlFor="installment">{lang.formNoInstall}</label>
         <select
           id="installment"
           name="installment"
@@ -52,7 +52,7 @@ const InputForm = ({ theme }) => {
           <option value={24}>24</option>
         </select>
 
-        <label htmlFor="profit_rate">Profit rate (%):</label>
+        <label htmlFor="profit_rate">{lang.formProfitRate}</label>
         <input
           id="profit_rate"
           name="profit_rate"
@@ -61,7 +61,7 @@ const InputForm = ({ theme }) => {
           value={values.profit_rate}
         />
 
-        <label htmlFor="installment_interval">Installment interval:</label>
+        <label htmlFor="installment_interval">{lang.formInstallInterval}</label>
         <select
           id="installment_interval"
           name="installment_interval"
@@ -74,7 +74,7 @@ const InputForm = ({ theme }) => {
           <option value="annual">annual</option>
         </select>
 
-        <label htmlFor="kkdf_tax_rate">KKDF Tax rate (%):</label>
+        <label htmlFor="kkdf_tax_rate">{lang.formRusfTax}</label>
         <input
           id="kkdf_tax_rate"
           name="kkdf_tax_rate"
@@ -82,7 +82,7 @@ const InputForm = ({ theme }) => {
           onChange={handleChange}
           value={values.kkdf_tax_rate}
         />
-        <label htmlFor="bsmv_tax_rate">BSMV Tax rate (%):</label>
+        <label htmlFor="bsmv_tax_rate">{lang.formBittTax}</label>
         <input
           id="bsmv_tax_rate"
           name="bsmv_tax_rate"
@@ -90,10 +90,22 @@ const InputForm = ({ theme }) => {
           onChange={handleChange}
           value={values.bsmv_tax_rate}
         />
-        <code> {JSON.stringify(values)}</code>
-        <BasicModal values={values} />
+        <BasicModal values={values} theme={theme} lang={lang} />
       </form>
-    </>
+      <div class={`form-svg-line ${theme}`}>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </div>
   );
 };
 

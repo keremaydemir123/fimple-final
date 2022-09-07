@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
 .navbar-wrapper {
   position: fixed;
   top: 10px;
@@ -11,64 +12,26 @@
   height: 40px;
   width: 80%;
   border-radius: 50px;
-  z-index: 1;
+  z-index: 100;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
-.navbar-wrapper .dark {
-  background: rgb(110, 110, 110);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(110, 110, 110, 0.7) 0%,
-    rgba(100, 100, 100, 0.7) 33%,
-    rgba(90, 90, 90, 0.7) 66%,
-    rgba(80, 80, 80, 0.7) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(110, 110, 110, 0.7) 0%,
-    rgba(100, 100, 100, 0.7) 33%,
-    rgba(90, 90, 90, 0.7) 66%,
-    rgba(80, 80, 80, 0.7) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(110, 110, 110, 0.7) 0%,
-    rgba(100, 100, 100, 0.7) 33%,
-    rgba(90, 90, 90, 0.7) 66%,
-    rgba(80, 80, 80, 0.7) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6e6e6e",endColorstr="#505050",GradientType=1);
-}
 
-.navbar-wrapper .light {
-  background: rgb(110, 110, 110);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(110, 110, 110, 0.7) 0%,
-    rgba(100, 100, 100, 0.7) 33%,
-    rgba(90, 90, 90, 0.7) 66%,
-    rgba(80, 80, 80, 0.7) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(110, 110, 110, 0.7) 0%,
-    rgba(100, 100, 100, 0.7) 33%,
-    rgba(90, 90, 90, 0.7) 66%,
-    rgba(80, 80, 80, 0.7) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(220, 220, 220, 0.8) 0%,
-    rgba(210, 210, 210, 0.8) 33%,
-    rgba(200, 200, 200, 0.8) 66%,
-    rgba(190, 190, 190, 0.8) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6e6e6e",endColorstr="#505050",GradientType=1);
+.company-logo {
+  height: 80%;
 }
-
 .company-name {
+  font-family: "Courgette", cursive;
   font-size: 22px;
   margin-right: auto;
+  z-index: 1;
+}
+@media screen and (max-width: 700px) {
+  .company-name {
+    display: none;
+  }
+  .company-logo {
+    margin-right: auto;
+  }
 }
 #lang-select {
   border: none;

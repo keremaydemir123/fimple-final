@@ -1,13 +1,112 @@
-.dark {
-  background-color: rgba(57, 57, 59, 0.95);
-  color: #f7f7f7;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
 }
-
-.light {
-  background-color: rgba(240, 240, 240, 0.9);
-  color: #222;
+:root {
+  --dark-bg: linear-gradient(
+    109.6deg,
+    rgb(20, 30, 48) 11.2%,
+    rgb(36, 59, 85) 91.1%
+  );
+  --dark-container-bg: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
+  --dark-text: #f5f5f5;
+  --dark-header-svg: #24527a;
+  --dark-form-bg: linear-gradient(
+    112.1deg,
+    #24527a 11.4%,
+    rgb(63, 76, 119) 40.2%
+  );
+  --dark-form-svg: #6789ba;
+  --light-bg: #e7e7e7;
+  --light-container-bg: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+  --light-text: #222;
+  --light-header-svg: #9896f1;
+  --light-form-bg: #9896f1aa;
+  --light-form-svg: #d59bf6;
 }
-
+.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 svg {
   font-size: 22px;
+}
+
+/*! THEME  */
+
+.dark {
+  color: var(--dark-text);
+}
+.light {
+  color: var(--light-text);
+}
+
+.Container.dark {
+  background: var(--dark-container-bg);
+}
+.Container.light {
+  background: var(--light-container-bg);
+}
+
+/* NAVBAR  */
+.navbar-wrapper.dark {
+  background: var(--dark-bg);
+}
+.navbar-wrapper.light {
+  background: var(--light-bg);
+}
+
+/* HEADER */
+.header-wrapper.dark {
+  background: transparent;
+}
+.header-wrapper.light {
+  background: transparent;
+}
+.header-svg-line.dark .shape-fill {
+  fill: var(--dark-header-svg);
+}
+.header-svg-line.light .shape-fill {
+  fill: var(--light-header-svg);
+}
+.scroll-btn.dark {
+  background: var(--dark-header-svg);
+}
+.scroll-btn.light {
+  background: var(--light-form-svg);
+}
+
+/* FORM */
+.inputForm.dark {
+  background: var(--dark-form-bg);
+}
+.inputForm.light {
+  background: var(--light-form-bg);
+}
+.form-svg-line.dark .shape-fill {
+  fill: var(--dark-form-svg);
+}
+.form-svg-line.light .shape-fill {
+  fill: var(--light-form-svg);
+}
+
+/* FOOTER */
+.footer-wrapper.dark {
+  background: var(--dark-form-svg);
+}
+.footer-wrapper.light {
+  background: var(--light-form-svg);
 }
