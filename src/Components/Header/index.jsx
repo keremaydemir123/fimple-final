@@ -1,8 +1,9 @@
 import React from "react";
 import "./header.css";
+import { Link } from "react-scroll";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 function Header({ theme, lang }) {
-  console.log("lang:", lang);
   return (
     <header className={`header-wrapper ${theme}`}>
       <div className={`header-svg-line ${theme}`}>
@@ -23,7 +24,18 @@ function Header({ theme, lang }) {
       <article>{lang.headerDesc}</article>
 
       <h3>{lang.headerScroll}</h3>
-      <button className={`scroll-btn ${theme}`}>Go</button>
+      <button className={`scroll-btn ${theme}`}>
+        <Link
+          activeClass="active"
+          to="inputForm"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <AiOutlineArrowDown className="active" />
+        </Link>
+      </button>
     </header>
   );
 }

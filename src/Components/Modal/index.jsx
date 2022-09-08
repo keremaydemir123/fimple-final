@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 import BasicTable from "../Table";
@@ -12,15 +11,15 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "90%",
-  maxHeight: "80%",
+  maxHeight: "90%",
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "1px solid #ccc",
   borderRadius: "10px",
-  boxShadow: 24,
+  boxShadow: 4,
   p: 4,
 };
 
-export default function BasicModal({ values, theme, lang }) {
+export default function BasicModal({ values, lang, isValid }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -36,10 +35,10 @@ export default function BasicModal({ values, theme, lang }) {
 
   return (
     <div>
-      {haveAllValues() ? (
+      {haveAllValues() && isValid ? (
         <Button
           onClick={handleOpen}
-          sx={{ border: 1, bgcolor: "grey.500", color: "grey.50" }}
+          sx={{ border: 1, bgcolor: "transparent", color: "grey.50" }}
         >
           {lang.formShowBtn}{" "}
         </Button>
@@ -55,11 +54,7 @@ export default function BasicModal({ values, theme, lang }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Table
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}></Typography>
-          <BasicTable values={values} />
+          <BasicTable values={values} lang={lang} />
         </Box>
       </Modal>
     </div>

@@ -25,6 +25,7 @@
   );
   --dark-form-svg: #6789ba;
   --light-bg: #e7e7e7;
+  --light-navbar-bg: #e7e7e7;
   --light-container-bg: radial-gradient(
     circle at 18.7% 37.8%,
     rgb(250, 250, 250) 0%,
@@ -42,7 +43,7 @@
   justify-content: center;
 }
 svg {
-  font-size: 22px;
+  font-size: 24px;
 }
 
 /*! THEME  */
@@ -66,7 +67,7 @@ svg {
   background: var(--dark-bg);
 }
 .navbar-wrapper.light {
-  background: var(--light-bg);
+  background-color: var(--light-navbar-bg);
 }
 
 /* HEADER */
