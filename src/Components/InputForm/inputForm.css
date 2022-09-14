@@ -19,13 +19,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   z-index: 10;
 }
 
-.inputForm > input,
-.inputForm > select {
+.inputForm > .input-wrapper > input,
+.inputForm > .input-wrapper > select {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -34,17 +34,38 @@
   background-color: #eee;
   border: 1px solid #bbb;
   border-radius: 10px;
-  width: 280px;
+  width: 90%;
 }
 .inputForm > label {
+  display: flex;
+  align-items: center;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
   font-weight: 400;
   font-size: large;
-  width: 280px;
+  width: 300px;
+  vertical-align: middle;
+}
+
+.input-wrapper {
+  margin: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 300px;
+}
+.error-icon {
+  font-size: 1.5rem;
+  margin-right: 6px;
 }
 .error {
-  color: red;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  font-size: large;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 100%;
 }
 
 .form-svg-line {
@@ -63,4 +84,10 @@
   width: calc(100% + 1.3px);
   height: 500px;
   transform: rotateY(180deg);
+}
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
 }

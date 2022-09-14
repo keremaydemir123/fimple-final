@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-out;
   text-decoration: none;
 }
 :root {
@@ -24,6 +24,8 @@
     rgb(63, 76, 119) 40.2%
   );
   --dark-form-svg: #6789ba;
+  --dark-tooltip: #6789ba;
+  --dark-error: #ff3333;
   --light-bg: #e7e7e7;
   --light-navbar-bg: #e7e7e7;
   --light-container-bg: radial-gradient(
@@ -35,6 +37,8 @@
   --light-header-svg: #9896f1;
   --light-form-bg: #9896f1aa;
   --light-form-svg: #d59bf6;
+  --light-tooltip: #f7f7f7;
+  --light-error: #4512aa;
 }
 .Container {
   display: flex;
@@ -110,4 +114,19 @@ svg {
 }
 .footer-wrapper.light {
   background: var(--light-form-svg);
+}
+/* TOOLTIP */
+.tooltip.dark {
+  color: var(--dark-tooltip);
+}
+.tooltip.light {
+  color: var(--light-tooltip);
+}
+
+/* FORM ERRORS */
+.error.dark {
+  color: var(--dark-error);
+}
+.error.light {
+  color: var(--light-error);
 }

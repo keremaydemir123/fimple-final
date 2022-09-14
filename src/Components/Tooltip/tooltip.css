@@ -1,0 +1,11 @@
+.tooltip {
+  margin-left: 6px;
+  font-size: 22px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.tooltip:hover {
+  cursor: pointer;
+}

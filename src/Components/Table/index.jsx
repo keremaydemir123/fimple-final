@@ -9,7 +9,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Calculator from "../Calculator";
 
-export default function SimpleTable({ values, lang, theme }) {
+export default function SimpleTable({ values, lang }) {
   const columns = [
     { id: "installment_no", label: lang.colInstallmentNo, minWidth: 170 },
     {
@@ -56,11 +56,11 @@ export default function SimpleTable({ values, lang, theme }) {
     },
   ];
 
-  const rows = Calculator({ values });
+  const rows = Calculator({ values, lang });
   console.log(rows);
 
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(6);
+  const [rowsPerPage, setRowsPerPage] = React.useState(13);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -117,7 +117,7 @@ export default function SimpleTable({ values, lang, theme }) {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[6, 12, 24]}
+        rowsPerPageOptions={[7, 13, 25]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}

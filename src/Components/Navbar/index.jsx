@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useRef } from "react";
 import "./navbar.css";
 import { BsSun, BsMoon } from "react-icons/bs";
 import { MdLanguage } from "react-icons/md";
@@ -6,8 +6,14 @@ import Languages from "../Languages";
 import companyLogo from "../../Assets/company-logo.png";
 
 function Navbar({ theme, setTheme, lang, setLang }) {
+  const langRef = useRef("en");
+
   const handleLang = () => {
-    setLang(lang.lang === "tr" ? Languages["en"] : Languages["tr"]);
+    setLang(Languages[langRef.current.value]);
+  };
+  const focusLangSelect = () => {
+    console.log(langRef.current);
+    langRef.current.focus();
   };
 
   return (
@@ -25,13 +31,16 @@ function Navbar({ theme, setTheme, lang, setLang }) {
           onClick={() => setTheme("dark")}
         />
       )}
-
-      <MdLanguage className={`lang-switcher moon ${theme}`} />
+      <MdLanguage
+        className={`lang-switcher moon ${theme}`}
+        onClick={focusLangSelect}
+      />
       <select
         id="lang-select"
         className={theme}
         onChange={handleLang}
         defaultValue={"en"}
+        ref={langRef}
       >
         <option value="tr" label="TR"></option>
         <option value="en" label="EN"></option>

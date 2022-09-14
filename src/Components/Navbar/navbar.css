@@ -43,3 +43,7 @@
 #lang-select option {
   color: #222;
 }
+.theme-switcher,
+.lang-switcher {
+  cursor: pointer;
+}

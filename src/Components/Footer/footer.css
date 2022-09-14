@@ -16,6 +16,8 @@
   height: 100%;
   font-size: 20px;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 .designer {
   font-size: 16px;
@@ -25,7 +27,7 @@
 }
 
 .github {
-  font-size: 40px;
+  font-size: 32px;
   color: #171515;
   outline: none;
 }
@@ -38,7 +40,7 @@
 }
 
 .linkedin {
-  font-size: 40px;
+  font-size: 32px;
   outline: none;
   color: #0077b5;
   transition: all 0.3s ease;

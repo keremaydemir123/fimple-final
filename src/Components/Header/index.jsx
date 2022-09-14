@@ -24,7 +24,7 @@ function Header({ theme, lang }) {
       <article>{lang.headerDesc}</article>
 
       <h3>{lang.headerScroll}</h3>
-      <button className={`scroll-btn ${theme}`}>
+      <button className={`scroll-btn ${theme}`} tabIndex={-1}>
         <Link
           activeClass="active"
           to="inputForm"
