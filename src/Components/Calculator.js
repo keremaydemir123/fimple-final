@@ -1,15 +1,18 @@
 function Calculator({ values, lang }) {
+  console.log("values calc: ", values);
   let {
-    loan,
-    number_of_installments,
-    profit_rate,
-    rate_type,
-    installment_interval,
-    rusf_tax_rate,
-    bitt_tax_rate,
+    Loan,
+    InstallInterval,
+    NoInstall,
+    ProfitRate,
+    RateType,
+    RusfTax,
+    BittTax,
   } = values;
 
   console.log("values: ", values);
+  console.log(RateType);
+
   function createData(
     installment_no,
     installment_amount,
@@ -31,25 +34,23 @@ function Calculator({ values, lang }) {
   }
   const rows = [];
 
-  let interest_rate =
-    profit_rate + profit_rate * (rusf_tax_rate / 100 + bitt_tax_rate / 100);
+  let interest_rate = ProfitRate + ProfitRate * (RusfTax / 100 + BittTax / 100);
   interest_rate = parseFloat(
     (Math.round(interest_rate * 100) / 100).toFixed(2)
   );
   interest_rate = interest_rate / 100;
 
-  let present_worth = parseFloat(loan);
+  let present_worth = parseFloat(Loan);
   let annual_worth;
-  console.log("rate type: ", rate_type);
-  if (rate_type == "compound") {
+  console.log("rate type: ", RateType);
+  if (RateType == "Compounded") {
     annual_worth =
       (present_worth *
-        (interest_rate * Math.pow(1 + interest_rate, number_of_installments))) /
-      (Math.pow(1 + interest_rate, number_of_installments) - 1);
+        (interest_rate * Math.pow(1 + interest_rate, NoInstall))) /
+      (Math.pow(1 + interest_rate, NoInstall) - 1);
   } else {
     annual_worth =
-      (present_worth + present_worth * interest_rate * number_of_installments) /
-      number_of_installments;
+      (present_worth + present_worth * interest_rate * NoInstall) / NoInstall;
   }
   annual_worth = parseFloat((Math.round(annual_worth * 100) / 100).toFixed(2));
   console.log("annual_worth: ", annual_worth);
@@ -63,21 +64,38 @@ function Calculator({ values, lang }) {
     bitt_amount: 0,
   };
 
-  const basicLoan = loan;
+  const basicLoan = Loan;
 
-  for (let i = 1; i <= number_of_installments; i++) {
+  let period;
+  switch (InstallInterval) {
+    case "Monthly":
+      period = "Month";
+      break;
+    case "Weekly":
+      period = "Week";
+      break;
+    case "Annually":
+      period = "Year";
+      break;
+
+    default:
+      break;
+  }
+
+  for (let i = 1; i <= NoInstall; i++) {
+    let installmentPeriod = `${i}.${lang[`table${period}`]}`;
     let profit_amount;
-    if (rate_type == "compound") {
-      profit_amount = (loan * profit_rate) / 100;
-    } else profit_amount = (basicLoan * profit_rate) / 100;
-    let rusf_amount = (profit_amount * rusf_tax_rate) / 100;
+    if (RateType == "Compounded") {
+      profit_amount = (Loan * ProfitRate) / 100;
+    } else profit_amount = (basicLoan * ProfitRate) / 100;
+    let rusf_amount = (profit_amount * RusfTax) / 100;
     sum.rusf_amount += rusf_amount;
-    let bitt_amount = (profit_amount * bitt_tax_rate) / 100;
+    let bitt_amount = (profit_amount * BittTax) / 100;
     sum.bitt_amount += bitt_amount;
     let principal = annual_worth - profit_amount - rusf_amount - bitt_amount;
-    let remaining_principal = loan - principal;
+    let remaining_principal = Loan - principal;
     // calculate last row
-    if (i == number_of_installments) {
+    if (i == NoInstall) {
       principal += remaining_principal;
       annual_worth += remaining_principal;
       remaining_principal = 0;
@@ -87,7 +105,7 @@ function Calculator({ values, lang }) {
     sum.profit_amount += profit_amount;
 
     let row = createData(
-      i,
+      installmentPeriod,
       annual_worth,
       principal,
       remaining_principal,
@@ -96,13 +114,13 @@ function Calculator({ values, lang }) {
       bitt_amount
     );
     rows.push(row);
-    loan = loan - principal;
+    Loan = Loan - principal;
   }
   let sum_row = createData(
     sum.installment_no,
     sum.future_worth,
     sum.principal,
-    "-",
+    0,
     sum.profit_amount,
     sum.rusf_amount,
     sum.bitt_amount

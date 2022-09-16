@@ -5,6 +5,9 @@ import Modal from "@mui/material/Modal";
 
 import BasicTable from "../Table";
 
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -27,10 +30,21 @@ export default function BasicModal({ values, lang, isValid }) {
   const haveAllValues = () => {
     for (const [key, value] of Object.entries(values)) {
       if (value == "") {
+        console.log("error here: ", key);
         return false;
       }
     }
     return true;
+  };
+
+  const downloadAsPDF = () => {
+    // create jsPDF table
+    const doc = new jsPDF({ orientation: "landscape" });
+    autoTable(doc, {
+      html: ".MuiTable-root",
+    });
+
+    doc.save("credit-payment-table.pdf");
   };
 
   return (
@@ -40,7 +54,7 @@ export default function BasicModal({ values, lang, isValid }) {
           onClick={handleOpen}
           sx={{ border: 1, bgcolor: "transparent", color: "grey.50" }}
         >
-          {lang.formShowBtn}{" "}
+          {lang.formShowBtn}
         </Button>
       ) : (
         <Button onClick={handleOpen} disabled>
@@ -55,6 +69,14 @@ export default function BasicModal({ values, lang, isValid }) {
       >
         <Box sx={style}>
           <BasicTable values={values} lang={lang} />
+          <Button
+            variant="contained"
+            color="success"
+            style={{ marginTop: "8px" }}
+            onClick={downloadAsPDF}
+          >
+            {lang.modalDownload}
+          </Button>
         </Box>
       </Modal>
     </div>

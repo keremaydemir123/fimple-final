@@ -5,7 +5,6 @@ import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Zoom from "@mui/material/Zoom";
 import Typography from "@mui/material/Typography";
 import { AiFillInfoCircle } from "react-icons/ai";
-import "./tooltip.css";
 
 const HtmlTooltip = styled(({ className, ...props }) => (
   <Tooltip

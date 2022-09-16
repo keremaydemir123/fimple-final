@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import Calculator from "../Calculator";
 
 export default function SimpleTable({ values, lang }) {
+  const rows = Calculator({ values, lang });
   const columns = [
     { id: "installment_no", label: lang.colInstallmentNo, minWidth: 170 },
     {
@@ -55,9 +56,6 @@ export default function SimpleTable({ values, lang }) {
       format: (value) => value.toFixed(2),
     },
   ];
-
-  const rows = Calculator({ values, lang });
-  console.log(rows);
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(13);

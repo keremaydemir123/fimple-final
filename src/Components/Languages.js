@@ -11,10 +11,12 @@ const tr = {
   formNoInstall: "Taksit sayısı:",
   formProfitRate: "Kar oranı (%):",
   formRateType: "Faiz türü:",
+  formCompounded: "Bileşik",
+  formBasic: "Basit",
   formInstallInterval: "Taksit aralığı:",
-  formIntervalWeekly: "haftalık",
-  formIntervalMonthly: "aylık",
-  formIntervalAnnually: "yıllık",
+  formWeekly: "haftalık",
+  formMonthly: "aylık",
+  formAnnually: "yıllık",
   formRusfTax: "KKDF vergi oranı (%):",
   formBittTax: "BSMV vergi oranı (%):",
   formShowBtn: "Tabloyu Göster",
@@ -27,10 +29,13 @@ const tr = {
   colRusf: "KKDF",
   colBitt: "BSMV",
   tableSum: "Toplam",
+  tableWeek: "hafta",
+  tableMonth: "ay",
+  tableYear: "yıl",
   infoHLoan: "Kredi miktarı",
   infoDLoan: "Kredi miktarı üzerine faiz konularak ödenecek ana paradır.",
-  infoHNoInstallments: "Taksit sayısı",
-  infoDNoInstallments:
+  infoHNoInstall: "Taksit sayısı",
+  infoDNoInstall:
     "Taksit sayısı toplam kredi tutarının kaç taksitte ödeneceğini belirtir.",
   infoHProfitRate: "Kâr oranı",
   infoDProfitRate:
@@ -41,11 +46,11 @@ const tr = {
   infoHInstallInterval: "Taksit ödeme aralığı",
   infoDInstallInterval:
     "Taksit ödeme aralığı taksitlerin ne sıklıkla ödeneceğini belirtir.",
-  infoHRusfRate: "KKDF faiz yüzdesi",
-  infoDRusfRate: "Kaynak Kullanımı Destekleme Fonu (KKDF) vergi yüzdesidir.",
-  infoHBittRate: "BSMV faiz yüzdesi",
-  infoDBittRate:
-    "Banka ve Sigorta Muameleleri Vergisi (BSMV) vergi yüzdesidir.",
+  infoHRusfTax: "KKDF faiz yüzdesi",
+  infoDRusfTax: "Kaynak Kullanımı Destekleme Fonu (KKDF) vergi yüzdesidir.",
+  infoHBittTax: "BSMV faiz yüzdesi",
+  infoDBittTax: "Banka ve Sigorta Muameleleri Vergisi (BSMV) vergi yüzdesidir.",
+  modalDownload: "PDF olarak indir",
 };
 const en = {
   lang: "en",
@@ -60,10 +65,12 @@ const en = {
   formNoInstall: "Number of installments:",
   formProfitRate: "Profit rate (%):",
   formRateType: "Rate Type:",
+  formCompounded: "Compounded",
+  formBasic: "Basic",
   formInstallInterval: "Installment interval:",
-  formIntervalWeekly: "weekly",
-  formIntervalMonthly: "monthly",
-  formIntervalAnnually: "annually",
+  formWeekly: "weekly",
+  formMonthly: "monthly",
+  formAnnually: "annually",
   formRusfTax: "RUSF tax rate (%):",
   formBittTax: "BITT tax rate (%):",
   formShowBtn: "Show Table",
@@ -76,11 +83,14 @@ const en = {
   colRusf: "RUSF",
   colBitt: "BITT",
   tableSum: "Total",
+  tableWeek: "week",
+  tableMonth: "month",
+  tableYear: "year",
   infoHLoan: "Loan amount",
   infoDLoan:
     "It is the principal amount to be paid by adding interest on the loan amount.",
-  infoHNoInstallments: "Number of installments",
-  infoDNoInstallments:
+  infoHNoInstall: "Number of installments",
+  infoDNoInstall:
     "The number of installments indicates how many installments the total loan amount will be paid.",
   infoHProfitRate: "Profit rate",
   infoDProfitRate:
@@ -91,10 +101,11 @@ const en = {
   infoHInstallInterval: "Installment payment interval",
   infoDInstallInterval:
     "Instalment payment interval specifies how often installments will be paid.",
-  infoHRusfRate: "RUSF tax rate",
-  infoDRusfRate: "Resource Utilization Support Fund (RUSF) tax percentage.",
-  infoHBittRate: "BITT tax rate",
-  infoDBittRate: "Banking and Insurance Transactions Tax (BITT) percentage.",
+  infoHRusfTax: "RUSF tax rate",
+  infoDRusfTax: "Resource Utilization Support Fund (RUSF) tax percentage.",
+  infoHBittTax: "BITT tax rate",
+  infoDBittTax: "Banking and Insurance Transactions Tax (BITT) percentage.",
+  modalDownload: "Download as PDF",
 };
 const Languages = { en, tr };
 
