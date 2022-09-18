@@ -6,10 +6,11 @@
   justify-content: center;
   position: relative;
   width: 100%;
+  margin-top: 100px;
 }
 
 .inputForm {
-  margin: 0 0 40px 0;
+  margin: 0 0 8px 0;
   width: 80%;
   height: max-content;
   padding: 20px 10px;
@@ -19,38 +20,41 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   z-index: 10;
 }
 
-.inputForm > .input-wrapper > input,
-.inputForm > .input-wrapper > select {
+.input,
+.select {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
   padding: 4px 8px;
-  border: none;
+  border: 3px solid transparent;
   background-color: #eee;
-  border: 1px solid #bbb;
   border-radius: 10px;
   width: 90%;
 }
+
+.input:focus,
+.select:focus {
+  outline: none;
+}
+
 .inputForm > label {
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: large;
+  font-size: 16px;
   width: 300px;
   vertical-align: middle;
 }
 
 .input-wrapper {
-  margin: 4px 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   width: 300px;
 }
@@ -65,18 +69,23 @@
 .tooltip:hover {
   cursor: pointer;
 }
+.error-wrapper {
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
 .error-icon {
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-right: 6px;
 }
 .error {
   display: flex;
   align-items: center;
   width: 300px;
-  font-size: large;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 1px;
-  line-height: 100%;
+  letter-spacing: 2px;
+  line-height: 50%;
 }
 
 .form-svg-line {
@@ -93,7 +102,7 @@
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 500px;
+  height: 800px;
   transform: rotateY(180deg);
 }
 select:required:invalid {

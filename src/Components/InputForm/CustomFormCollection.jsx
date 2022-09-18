@@ -25,6 +25,7 @@ const CustomFormCollection = ({
             onChange={handleChange}
             onBlur={handleBlur}
             value={values[name]}
+            className={errors[name] ? `input error-border ${theme}` : "input"}
           />
         ) : (
           <select
@@ -34,6 +35,7 @@ const CustomFormCollection = ({
             onChange={handleChange}
             onBlur={handleBlur}
             value={values[name]}
+            className="select"
           >
             <option value="" disabled>
               ...
@@ -54,12 +56,14 @@ const CustomFormCollection = ({
         />
       </div>
 
-      {errors[name] && touched[name] && (
-        <div className={`error ${theme}`}>
-          <BiError className="error-icon" />
-          {errors[name]}
-        </div>
-      )}
+      <div className="error-wrapper">
+        {errors[name] && touched[name] && (
+          <div className={`error ${theme}`}>
+            <BiError className="error-icon" />
+            {errors[name]}
+          </div>
+        )}
+      </div>
     </>
   );
 };

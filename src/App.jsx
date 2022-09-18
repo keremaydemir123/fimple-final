@@ -1,6 +1,5 @@
 import { ThemeProvider } from "./Components/Context/ThemeContext";
 import { LanguageProvider } from "./Components/Context/LanguageContext";
-import "./App.css";
 import Container from "./Components/Container";
 
 function App() {

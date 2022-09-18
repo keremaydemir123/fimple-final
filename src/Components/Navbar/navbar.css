@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .navbar-wrapper {
   position: fixed;
-  top: 10px;
+  top: 8px;
   padding: 0 30px;
   display: flex;
   align-items: center;
@@ -9,18 +9,16 @@
   gap: 10px;
   font-size: xx-large;
   color: #fff;
-  height: 40px;
+  height: 30px;
   width: 80%;
   border-radius: 50px;
   z-index: 100;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.company-logo {
-  height: 80%;
-}
 .company-name {
-  font-family: "Courgette", cursive;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 400;
   font-size: 22px;
   margin-right: auto;
   z-index: 1;
@@ -33,7 +31,19 @@
     margin-right: auto;
   }
 }
+.sun,
+.moon,
+.company-logo {
+  font-size: 22px;
+  transition: 0.1s ease all;
+}
+.sun:hover,
+.moon:hover {
+  scale: 1.1;
+}
+
 #lang-select {
+  cursor: pointer;
   border: none;
   outline: none;
   height: 80%;

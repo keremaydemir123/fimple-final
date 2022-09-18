@@ -11,6 +11,7 @@
     rgb(20, 30, 48) 11.2%,
     rgb(36, 59, 85) 91.1%
   );
+  --dark-navbar-bg: linear-gradient(to right, #284875cc, #333e58cc);
   --dark-container-bg: linear-gradient(
     112.1deg,
     rgb(32, 38, 57) 11.4%,
@@ -25,9 +26,9 @@
   );
   --dark-form-svg: #6789ba;
   --dark-tooltip: #6789ba;
-  --dark-error: #ff3333;
+  --dark-error: #fb4f4f;
   --light-bg: #e7e7e7;
-  --light-navbar-bg: #e7e7e7;
+  --light-navbar-bg: linear-gradient(to right, #e2c5f3aa, #d59bf6aa);
   --light-container-bg: radial-gradient(
     circle at 18.7% 37.8%,
     rgb(250, 250, 250) 0%,
@@ -46,10 +47,6 @@
   align-items: center;
   justify-content: center;
 }
-svg {
-  font-size: 24px;
-}
-
 /*! THEME  */
 
 .dark {
@@ -68,10 +65,12 @@ svg {
 
 /* NAVBAR  */
 .navbar-wrapper.dark {
-  background: var(--dark-bg);
+  background: var(--dark-navbar-bg);
+  box-shadow: rgba(50, 50, 100, 0.8) 0px 3px 8px;
 }
 .navbar-wrapper.light {
-  background-color: var(--light-navbar-bg);
+  background: var(--light-navbar-bg);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
 }
 
 /* HEADER */
@@ -97,9 +96,11 @@ svg {
 /* FORM */
 .inputForm.dark {
   background: var(--dark-form-bg);
+  box-shadow: rgba(10, 10, 100, 0.5) 1.95px 1.95px 2.6px;
 }
 .inputForm.light {
   background: var(--light-form-bg);
+  box-shadow: rgba(10, 10, 100, 0.3) 1.95px 1.95px 2.6px;
 }
 .form-svg-line.dark .shape-fill {
   fill: var(--dark-form-svg);
@@ -130,11 +131,26 @@ svg {
 .error.light {
   color: var(--light-error);
 }
-
-.hidden {
-  opacity: 0;
+.error-border.dark {
+  border-color: var(--dark-error);
+  color: var(--light-text);
 }
-
-.show {
-  opacity: 1;
+.error-border.light {
+  border-color: var(--light-error);
+  color: var(--light-text);
+}
+@media screen and (max-width: 480px) {
+  .navbar-wrapper {
+    width: 90%;
+  }
+  .inputForm {
+    width: 90%;
+  }
+  .inputForm > label {
+    font-size: medium;
+  }
+  .inputForm > .input-wrapper > input,
+  .inputForm > .input-wrapper > select {
+    font-size: medium;
+  }
 }

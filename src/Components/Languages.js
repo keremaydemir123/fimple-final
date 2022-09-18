@@ -4,7 +4,7 @@ const tr = {
   headerDesc: `
   Hesap makinemizi kullanarak bankaları karşılaştırabilir, faiz oranlarını ve vergileri değiştirebilir,
   ve gelecekteki olası yatırımlarınız için daha kolay kararlar verebilirsiniz.
-  Dilerseniz sonuçları istediğiniz para birimine çevirerek tablomuzu inceleyebilirsiniz.
+  Dilerseniz sizin için oluşturacağımız tabloyu PDF olarak saklayabilir veya yazdırmak için kullanabilirsiniz.
   `,
   headerScroll: "Şimdi Hesapla!",
   formLoan: "Kredi miktarı:",
@@ -20,6 +20,9 @@ const tr = {
   formRusfTax: "KKDF vergi oranı (%):",
   formBittTax: "BSMV vergi oranı (%):",
   formShowBtn: "Tabloyu Göster",
+  errRequired: "Bu alan zorunludur!",
+  errMoreThan0: "0'dan büyük olmalıdır!",
+  errMaxAllowed: "Maximum installment can be 100",
   footerText: "Kerem Aydemir tarafından hazırlanmıştır.",
   colInstallmentNo: "Taksit No.",
   colInstallmentAmount: "Taksit Tutarı",
@@ -56,9 +59,9 @@ const en = {
   lang: "en",
   headerQuote: "An investment in knowledge pays the best interest.",
   headerDesc: `
-  By using our calculator, you can compare banks, change the interest rate and taxes, 
-  and make easier desicions for your possible future investments. 
-  If you wish, you can analyze our table by converting results to currency of your choice.
+  Using our calculator you can compare banks, change interest rates and taxes,
+  and you can make easier decisions for your possible future investments.
+  If you wish, you can save the table we will create for you as a PDF or use it for printing.
   `,
   headerScroll: "Calculate Now!",
   formLoan: "Loan amount:",
@@ -74,6 +77,9 @@ const en = {
   formRusfTax: "RUSF tax rate (%):",
   formBittTax: "BITT tax rate (%):",
   formShowBtn: "Show Table",
+  errRequired: "This field is required!",
+  errMoreThan0: "Must be greater than 0!",
+  errMaxAllowed: "Maximum installment can be 100",
   footerText: "Made By Kerem Aydemir",
   colInstallmentNo: "Installment No.",
   colInstallmentAmount: "Installment Amount",

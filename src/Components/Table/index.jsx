@@ -71,7 +71,7 @@ export default function SimpleTable({ values, lang }) {
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer sx={{ maxHeight: 380 }}>
+      <TableContainer sx={{ maxHeight: 480 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>

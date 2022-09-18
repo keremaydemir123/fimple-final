@@ -24,8 +24,9 @@ const InputForm = ({ theme, lang }) => {
       RusfTax: 15,
       BittTax: 10,
     },
-    validationSchema,
+    validationSchema: validationSchema(lang),
   });
+
   return (
     <div className="form-wrapper">
       <form
@@ -86,7 +87,6 @@ const InputForm = ({ theme, lang }) => {
           inputType="input"
           formik={{ values, errors, touched, handleChange, handleBlur }}
         />
-
         <BasicModal lang={lang} values={values} isValid={isValid} />
       </form>
       <div className={`form-svg-line ${theme}`}>

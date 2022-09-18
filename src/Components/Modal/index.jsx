@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import { BsDownload } from "react-icons/bs";
 
 import BasicTable from "../Table";
 
@@ -76,6 +77,7 @@ export default function BasicModal({ values, lang, isValid }) {
             onClick={downloadAsPDF}
           >
             {lang.modalDownload}
+            <BsDownload style={{ fontSize: "1rem", marginLeft: "8px" }} />
           </Button>
         </Box>
       </Modal>

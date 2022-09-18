@@ -1,5 +1,4 @@
 function Calculator({ values, lang }) {
-  console.log("values calc: ", values);
   let {
     Loan,
     InstallInterval,
@@ -11,7 +10,6 @@ function Calculator({ values, lang }) {
   } = values;
 
   console.log("values: ", values);
-  console.log(RateType);
 
   function createData(
     installment_no,
@@ -53,7 +51,6 @@ function Calculator({ values, lang }) {
       (present_worth + present_worth * interest_rate * NoInstall) / NoInstall;
   }
   annual_worth = parseFloat((Math.round(annual_worth * 100) / 100).toFixed(2));
-  console.log("annual_worth: ", annual_worth);
 
   let sum = {
     installment_no: lang.tableSum,
